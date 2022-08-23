@@ -22,7 +22,7 @@ class Consumer {
 
   @Autowired
   lateinit var transactionService: TransactionService
-  @KafkaListener(topics = ["\${kafka.topics.order}"], groupId = "ppr")
+  @KafkaListener(topics = ["order}"], groupId = "ppr")
   fun listener(consumerRecord: ConsumerRecord<Any, Any>, ack: Acknowledgment) {
     logger.info("Message received {}", consumerRecord)
     ack.acknowledge()
