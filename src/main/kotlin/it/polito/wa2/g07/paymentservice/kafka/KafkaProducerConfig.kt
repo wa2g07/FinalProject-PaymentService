@@ -21,6 +21,7 @@ class KafkaProducerConfig(
     configProps[ProducerConfig.BOOTSTRAP_SERVERS_CONFIG] = servers
     configProps[ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG] = StringSerializer::class.java
     configProps[ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG] = OutcomeSerializer::class.java
+    configProps[ProducerConfig.ACKS_CONFIG]="all"
     return DefaultKafkaProducerFactory(configProps)
   }
 
