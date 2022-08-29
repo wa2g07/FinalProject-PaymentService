@@ -1,9 +1,9 @@
-FROM gradle:latest AS build-stage
+FROM gradle:20 AS build-stage
 
 COPY ./ ./
 RUN  ./gradlew build --exclude-task test 
 
-FROM openjdk:latest
+FROM openjdk:20
 
 ENV SERVICE_PORT=8083
 COPY --from=build-stage /home/gradle/build/libs/PaymentService-0.0.1-SNAPSHOT.jar /app.jar
