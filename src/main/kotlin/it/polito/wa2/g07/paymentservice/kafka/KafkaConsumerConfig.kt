@@ -15,7 +15,7 @@ import org.springframework.kafka.listener.ContainerProperties
 @EnableKafka
 @Configuration
 class KafkaConsumerConfig(
-  @Value("\${kafka.bootstrapAddress}")
+  @Value("\${kafka.consumer.bootstrapAddress}")
   private val servers: String
 ) {
 
