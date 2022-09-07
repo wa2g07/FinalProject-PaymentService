@@ -28,7 +28,7 @@ class Consumer {
     ack.acknowledge()
     val billingInfo = consumerRecord.value() as BillingInformation
     val out = (0..100).random()
-    if(out < 70) {
+    if(out < 101) {
       val t = transactionService.addTransaction(TransactionDTO(
               owner = billingInfo.owner,
               totalCost = billingInfo.totCost,
